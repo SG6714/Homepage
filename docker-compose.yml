@@ -1,12 +1,32 @@
+# /your-flask-repo/docker-compose.yml
+
 version: '3.8'
 
 services:
+  # 1. The Flask Application Service (unchanged from the production version)
   web:
     build: .
-    ports:
-      - "8080:8080"
+    container_name: flask_app_web
+    # The 'web' service does NOT expose any ports directly. Nginx handles all traffic.
     volumes:
-      - .:/app
-    environment:
-      - FLASK_ENV=development
-    restart: always
+      - .:/app:ro
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 128M
+
+  # 2. The Simplified Nginx Reverse Proxy Service
+  nginx:
+    image: nginx:latest
+    container_name: flask_app_nginx
+    # Map port 8010 on the host to port 8010 in the container.
+    ports:
+      - "8010:8010"
+    volumes:
+      # Mount our simplified nginx.conf file
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    # This simple command tells Nginx to run in the foreground.
+    command: 'nginx -g "daemon off;"'
+    depends_on:
+      - web

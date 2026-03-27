@@ -1,3 +1,27 @@
+# Shane Guignard
+
+## (He/Him) Software Engineer, Senior [Zebra Technologies - SETP CA]
+
+Hello there! I'm a hands-on developer who loves figuring out how things work, from the application layer all the way down to the metal. My journey often starts with a simple "Hello, World!" and quickly evolves into containerizing the app, securing it, and putting it online for the world to see.
+
+I'm particularly interested in the challenges of web security and enjoy finding ways to build robust applications that are resilient by design.
+
+---
+
+### 🌱 I’m Currently Working On:
+
+*   Building and securing web applications with **Python** and **Flask**.
+*   Mastering container workflows using **Docker** and **Docker Compose**.
+*   Fine-tuning server configurations with **Nginx** as a reverse proxy.
+*   Automating Business Process with **N8N** and **Github Copilot**.
+
+---
+
+### 💬 Let's Connect
+
+*   Check out my personal site at [shaneguignard.ca](http://shaneguignard.ca).
+*   Connect with me on [LinkedIn](https://linkedin.com/shaneguignard).
+
 ## Homepage
 
 Welcome to the source code for my personal website, an integration of advanced technology and modern personal branding. This project highlights my expertise as a technologist and underlines the seamless incorporation of technology infrastructure into everyday solutions.
