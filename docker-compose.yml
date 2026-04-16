@@ -22,7 +22,7 @@ services:
     container_name: flask_app_nginx
     # Map port 8010 on the host to port 8010 in the container.
     ports:
-      - "8010:8010"
+      - "8020:8020"
     volumes:
       # Mount our simplified nginx.conf file
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
