@@ -11,6 +11,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application code
 COPY . .
 
+# Ensure the persistent log directory exists
+RUN mkdir -p /data
+
 
 # Tell Docker that the container listens on port 5000
 EXPOSE 5000

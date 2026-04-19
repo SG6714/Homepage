@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # --- Paths and constants ---
 SAFE_DIRECTORY = '/app'
-LOG_FILE = os.path.join(SAFE_DIRECTORY, 'visitors.log')
+LOG_FILE = '/data/visitors.log'
 
 # --- NEW: Command Whitelist (Crucial Security Feature) ---
 # This is the list of commands that are explicitly permitted. Everything else will be blocked.
@@ -90,6 +90,17 @@ def execute_safely(command_string: str):
         return None, "Command timed out after 10 seconds."
     except Exception as e:
         return None, f"An execution error occurred: {str(e)}"
+
+
+@app.route('/log')
+def visitor_log():
+    """Display the persistent visitor log to all visitors."""
+    try:
+        with open(LOG_FILE, 'r') as f:
+            log_content = f.read()
+    except FileNotFoundError:
+        log_content = None
+    return render_template('log.html', log_content=log_content)
 
 
 @app.route('/', methods=['GET', 'POST'])
