@@ -152,6 +152,13 @@
         body *:not(input):not(button):not(h1):not(h2) {
              text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
         }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
 
         /* Optional: Import a retro font from Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
@@ -164,6 +171,7 @@
     <div class="container">
         <h1>[ Shane Guignard ]<span class="cursor"></span></h1>
         <p><strong>WARNING:</strong> This is a highly experimental interface. Exercise extreme caution.</p>
+        <p><a href="/log"><span class="prompt">&gt;</span> View visitor log</a></p>
 
         <form action="/" method="POST">
             <label for="user_text_input"><span class="prompt">guest:~$</span></label>
